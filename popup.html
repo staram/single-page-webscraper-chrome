@@ -8,10 +8,15 @@
 </head>
 <body>
     <div class="menu">
-        <li class="menu-list">URL <input id="page-url" size="50" placeholder="URL"></input></li>
-        <li class="menu-list">Title <input id="page-title" size="50" placeholder="Title"></input></li>
-        <li class="menu-list"><textarea id="page-text" rows="10" cols="43"></textarea></li>
-        <button id="save-button">Save Text</button>
+        <ul>
+            <li class="menu-list"><textarea id="page-text"></textarea></li>
+            <li class="menu-list"><button id="save-button-txt">Save text (.txt)</button></li>
+            <li>&nbsp;</li>
+            <li class="menu-list">URL <input id="page-url" placeholder="URL"></input></li>
+            <li class="menu-list">Title <input id="page-title" placeholder="Title required to save file"></input></li>
+            <li class="menu-list"><button id="save-button-csv">Save all (.csv)</button></li>
+            
+        </ul>
     </div>
     <script src="popup.js"></script>
 </body>
