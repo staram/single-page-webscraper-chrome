@@ -43,7 +43,7 @@ function saveToTXT() {
       return;
   }
 
-  const blob = new Blob([textToSave], {type: 'text/plain;charset=utf8'});
+  const blob = new Blob([textToSave], {type: 'text/plain; charset=utf8'});
   const url = URL.createObjectURL(blob);
 
   chrome.downloads.download({
@@ -69,8 +69,9 @@ function saveToCSV() {
   }
 
   const csvContent = `"${urlToSave.replace(/"/g, '""')}","${titleToSave.replace(/"/g, '""')}","${textToSave.replace(/"/g, '""')}"\n`;
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const blob = new Blob(["\uFEFF"+csvContent], { type: 'text/csv; charset=utf-8' });
   const url = URL.createObjectURL(blob);
+
 
   chrome.downloads.download({
       url: url,
